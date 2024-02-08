@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css"/>
+  <title>Your Service Booking Platform</title>
+</head>
+<body>
+
+  <header>
+    <h1>Your Service Booking Platform</h1>
+  </header>
+
+  <section>
+    <form id="bookingForm">
+      <label for="serviceName">Select a Service:</label>
+      <select id="serviceName" name="serviceName">
+        <option value="cleaning">Home Cleaning</option>
+        <option value="plumbing">Plumbing</option>
+        <option value="electrical">Electrical Work</option>
+        <!-- Add more options as needed -->
+      </select>
+
+      <label for="date">Select Date:</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="time">Select Time:</label>
+      <input type="time" id="time" name="time" required>
+
+      <button type="submit">Book Service</button>
+    </form>
+  </section>
+
+  <script>
+    document.getElementById('bookingForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      // Fetch data from the form
+      const serviceName = document.getElementById('serviceName').value;
+      const date = document.getElementById('date').value;
+      const time = document.getElementById('time').value;
+
+      // You can perform further actions here, such as sending data to the server
+      
+      alert(`Booking Confirmed!\nService: ${serviceName}\nDate: ${date}\nTime: ${time}`);
+    });
+  </script>
+
+</body>
+</html>
